@@ -1,9 +1,25 @@
 package com.projectjava.produtosApi.model;
 
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "produto") // também não é necessário
 public class Produto {
+    @Id
+    @Column(name = "id") // não é necessário colocar nas colunas que tem o mesmo nome no bd
     private String id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name= "descricao")
     private String descricao;
+
+    @Column(name = "preco")
     private Double preco;
 
     public String getId() {
